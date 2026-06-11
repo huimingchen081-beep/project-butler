@@ -15,7 +15,8 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const { createWriteStream } = require('fs');
-const archiver = require('archiver');
+const archiverModule = require('archiver');
+const archiver = (format, opts) => new archiverModule.Archiver(format, opts);
 
 const PYTHON = 'C:/Users/Administrator/.workbuddy/binaries/python/envs/default/Scripts/python.exe';
 const CONVERT_SCRIPT = path.join(__dirname, 'convert.py');
