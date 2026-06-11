@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Butler — AI Agent for Autonomous Document Generation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-brand">
+    <svg width="28" height="28" viewBox="0 0 28 28"><rect width="28" height="28" rx="6" fill="#00D4AA"/><text x="14" y="20" text-anchor="middle" fill="#0D111A" font-size="16" font-weight="700">B</text></svg>
+    <span>Project Butler</span>
+  </div>
+  <div class="nav-links">
+    <a href="#demo">Demo</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/huimingchen081-beep/project-butler" target="_blank" class="nav-gh">GitHub ↗</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-badge">Microsoft Agents League 2026 • Creative Apps Track</div>
+    <h1>Your AI Project Butler</h1>
+    <p class="hero-sub">One sentence describes your idea.<br>The agent plans, writes, designs, and packages — autonomously.</p>
+    <div class="hero-features">
+      <span>🧠 Multi-step Reasoning</span>
+      <span>📄 6 Document Types</span>
+      <span>📦 Auto-packaged ZIP</span>
+      <span>⚡ Powered by Copilot</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-terminal">
+      <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+      <div class="term-body">
+        <div class="term-line"><span class="term-prompt">$</span> project-butler "AI-powered pet social app"</div>
+        <div class="term-line muted">🧠 Analyzing requirements...</div>
+        <div class="term-line muted">📋 Planned 5 deliverables</div>
+        <div class="term-line">✅ PRD_产品需求文档.docx <span class="term-size">32KB</span></div>
+        <div class="term-line">✅ 竞品分析报告.pptx <span class="term-size">28KB</span></div>
+        <div class="term-line">✅ 财务预测模型.xlsx <span class="term-size">8KB</span></div>
+        <div class="term-line">✅ 投资人路演PPT.pptx <span class="term-size">18KB</span></div>
+        <div class="term-line">✅ 技术架构文档.docx <span class="term-size">24KB</span></div>
+        <div class="term-line success">📦 宠物社交App_交付包.zip <span class="term-size">86KB</span></div>
+        <div class="term-line"><span class="term-prompt">$</span> <span class="cursor">█</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DEMO ───────────────────────────────────────────────── -->
+<section class="demo" id="demo">
+  <h2>Try It Live</h2>
+  <p class="section-sub">Describe your project idea and watch the agent work.</p>
+
+  <div class="demo-container">
+    <div class="demo-input-area">
+      <textarea id="projectInput" placeholder="e.g. 我要做一个AI驱动的在线教育平台，目标是帮助职场人利用碎片时间学习新技能。请帮我准备完整的项目文档和投资人路演材料。"></textarea>
+      <div class="demo-actions">
+        <button id="runBtn" class="btn-primary">
+          <span class="btn-icon">🚀</span> Generate Project Docs
+        </button>
+        <div class="example-chips">
+          <span>Examples:</span>
+          <button class="chip" onclick="fillExample(0)">宠物社交App</button>
+          <button class="chip" onclick="fillExample(1)">在线教育平台</button>
+          <button class="chip" onclick="fillExample(2)">跨境电商SaaS</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div id="progressArea" class="progress-area hidden">
+      <div class="progress-header">
+        <span class="progress-phase" id="phaseLabel">Planning...</span>
+        <span class="progress-count" id="taskCount"></span>
+      </div>
+      <div class="progress-bar-track">
+        <div class="progress-bar-fill" id="progressBar"></div>
+      </div>
+      <div class="progress-log" id="progressLog"></div>
+    </div>
+
+    <!-- Results -->
+    <div id="resultsArea" class="results-area hidden">
+      <div class="results-header">
+        <h3>📦 Generated Deliverables</h3>
+        <span id="resultsSummary"></span>
+      </div>
+      <div class="results-grid" id="resultsGrid"></div>
+    </div>
+
+    <!-- Error -->
+    <div id="errorArea" class="error-area hidden"></div>
+  </div>
+</section>
+
+<!-- ─── ARCHITECTURE ───────────────────────────────────────── -->
+<section class="architecture" id="architecture">
+  <h2>How It Works</h2>
+  <p class="section-sub">Multi-step reasoning agent built with GitHub Copilot</p>
+
+  <div class="arch-diagram">
+    <div class="arch-flow">
+      <div class="arch-node arch-input">
+        <div class="arch-icon">💬</div>
+        <div class="arch-label">Natural Language<br>Project Description</div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-plan">
+        <div class="arch-icon">🧠</div>
+        <div class="arch-label">Planning Engine<br><small>LLM Task Decomposition</small></div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-group">
+        <div class="arch-node arch-exec">
+          <div class="arch-icon">⚙️</div>
+          <div class="arch-label">Execution Pipeline</div>
+        </div>
+        <div class="arch-subnodes">
+          <span>📄 PRD</span>
+          <span>📊 Analysis</span>
+          <span>💰 Finance</span>
+          <span>🎯 Pitch</span>
+          <span>🏗️ Architecture</span>
+          <span>💻 Code</span>
+        </div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-convert">
+        <div class="arch-icon">🔄</div>
+        <div class="arch-label">Office Converter<br><small>.pptx .docx .xlsx</small></div>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node arch-output">
+        <div class="arch-icon">📦</div>
+        <div class="arch-label">Packaged ZIP<br><small>Ready to Download</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tech-stack">
+    <h3>Technology Stack</h3>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-card-icon">🤖</div>
+        <h4>GitHub Copilot</h4>
+        <p>AI-assisted development for agent logic, error handling, and pipeline orchestration</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-icon">🧠</div>
+        <h4>DashScope LLM</h4>
+        <p>qwen3.7-plus for planning & content, qwen-long-latest for code generation</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-icon">🐍</div>
+        <h4>Python Office SDK</h4>
+        <p>python-pptx, python-docx, openpyxl for native Office file generation</p>
+      </div>
+      <div class="tech-card">
+        <div class="tech-card-icon">⚡</div>
+        <h4>Node.js Runtime</h4>
+        <p>Async pipeline orchestration with real-time progress streaming</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ──────────────────────────────────────────────── -->
+<section class="about" id="about">
+  <h2>Built for Microsoft Agents League</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <h3>🎯 Challenge</h3>
+      <p>Creative Apps track — build innovative applications with AI-assisted development using GitHub Copilot.</p>
+    </div>
+    <div class="about-card">
+      <h3>💡 Innovation</h3>
+      <p>Not just a document generator — a <em>reasoning agent</em> that autonomously plans, executes, and delivers complete project documentation.</p>
+    </div>
+    <div class="about-card">
+      <h3>🔧 Copilot Usage</h3>
+      <p>Copilot accelerated development of the planning prompt engineering, async pipeline, error recovery patterns, and file conversion integration.</p>
+    </div>
+    <div class="about-card">
+      <h3>👤 Team</h3>
+      <p>Huiming Chen (陈惠明) — Full-stack developer & AI engineer, Zhengzhou Huiqin Software.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <p>Project Butler © 2026 • Built with ❤️ for Microsoft Agents League Hackathon</p>
+  <p><a href="https://github.com/huimingchen081-beep/project-butler">GitHub</a> • <a href="https://dorahacks.io">DoraHacks</a></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

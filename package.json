@@ -1,0 +1,24 @@
+{
+  "name": "project-butler",
+  "version": "1.0.0",
+  "description": "AI Project Butler — Autonomous multi-step agent for project documentation generation. Built for Microsoft Agents League Hackathon 2026 (Creative Apps Track).",
+  "main": "cli.js",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node cli.js",
+    "test": "node cli.js \"做一个AI健身App\""
+  },
+  "keywords": [
+    "ai-agent",
+    "multi-step-reasoning",
+    "document-generation",
+    "github-copilot",
+    "microsoft-agents-league",
+    "hackathon"
+  ],
+  "author": "Huiming Chen (陈惠明)",
+  "license": "MIT",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
+}
