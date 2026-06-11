@@ -8,8 +8,13 @@
  *   User Input → Planning LLM → Task Queue → Execute Tasks → Package Output
  */
 
-const DASHSCOPE_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
-const DASHSCOPE_KEY = 'sk-1fb7b39e1e8b49ba8059aa13b070530e';
+const DASHSCOPE_URL = process.env.DASHSCOPE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+const DASHSCOPE_KEY = process.env.DASHSCOPE_API_KEY;
+if (!DASHSCOPE_KEY) {
+  console.error('❌ Error: DASHSCOPE_API_KEY environment variable is not set.');
+  console.error('   Please create a .env file or set the variable: export DASHSCOPE_API_KEY=your-key');
+  process.exit(1);
+}
 
 // ─── LLM Call ──────────────────────────────────────────────────
 async function callLLM(systemPrompt, userMessage, model = 'qwen3.7-plus') {

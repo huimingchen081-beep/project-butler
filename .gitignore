@@ -2,3 +2,5 @@ node_modules/
 outputs/
 *.zip
 .DS_Store
+.env
+.env.local

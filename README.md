@@ -72,10 +72,25 @@ User Input (Natural Language)
 - Node.js 22+
 - Python 3.13+ with venv
 - Python packages: `python-pptx`, `python-docx`, `openpyxl`
+- DashScope API Key (free at [dashscope.console.aliyun.com](https://dashscope.console.aliyun.com/))
+
+### Setup
+```bash
+git clone https://github.com/huimingchen081-beep/project-butler.git
+cd project-butler
+npm install
+
+# Set your DashScope API key
+cp .env.example .env
+# Edit .env and replace with your actual API key
+
+# Install Python dependencies
+python -m venv venv
+venv/Scripts/pip install python-pptx python-docx openpyxl
+```
 
 ### Run Web UI
 ```bash
-npm install
 npm start
 # Open http://localhost:3000
 ```
@@ -96,6 +111,7 @@ project-butler/
 ├── index.html        # Web UI (dark tech theme)
 ├── styles.css        # Design system
 ├── app.js            # Frontend logic
+├── .env.example      # Environment variable template
 ├── outputs/          # Generated deliverables
 ├── ARCHITECTURE.md   # Detailed architecture documentation
 └── README.md         # This file
